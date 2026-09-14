@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lancôme La Vie Est Belle — Полный гид</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --rose: #C4A0A5;
+    --rose-light: #E8D5D8;
+    --rose-pale: #F5EDEF;
+    --gold: #B8956A;
+    --gold-light: #D4B896;
+    --gold-pale: #F0E6D8;
+    --charcoal: #2D2A2E;
+    --charcoal-soft: #4A4549;
+    --warm-white: #FDFBF9;
+    --cream: #FAF6F1;
+    --divider: #E0D3CE;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:17px; }
+body {
+    font-family:'Cormorant Garamond','Georgia',serif;
+    background:var(--warm-white);
+    color:var(--charcoal);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* ═══ HERO ═══ */
+.hero {
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+}
+.hero-bg {
+    position:absolute;
+    inset:0;
+    background: url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    filter: brightness(0.35) saturate(0.7);
+    z-index:0;
+}
+.hero-overlay {
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(45,42,46,0.3) 0%, rgba(196,160,165,0.2) 50%, rgba(45,42,46,0.6) 100%);
+    z-index:1;
+}
+.hero-content {
+    position:relative;
+    z-index:2;
+    max-width:800px;
+    padding:2rem;
+}
+.hero-brand {
+    font-family:'Montserrat',sans-serif;
+    font-weight:500;
+    font-size:0.75rem;
+    letter-spacing:0.5em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin-bottom:2rem;
+}
+.hero-title {
+    font-family:'Playfair Display',serif;
+    font-weight:400;
+    font-size:clamp(2.8rem,7vw,5.5rem);
+    line-height:1.1;
+    color:#fff;
+    margin-bottom:0.5rem;
+}
+.hero-title em { font-style:italic; color:var(--rose-light); }
+.hero-sub {
+    font-weight:300;
+    font-size:clamp(1.1rem,2.5vw,1.5rem);
+    color:rgba(255,255,255,0.8);
+    margin-top:1.5rem;
+}
+.hero-line {
+    width:60px; height:1px;
+    background:var(--gold-light);
+    margin:2.5rem auto;
+}
+.hero-scroll a {
+    font-family:'Montserrat',sans-serif;
+    font-size:0.65rem;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    text-decoration:none;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.8rem;
+}
+.hero-scroll .arrow {
+    width:1px; height:40px;
+    background:var(--gold-light);
+    position:relative;
+    animation: pulse 2s ease infinite;
+}
+.hero-scroll .arrow::after {
+    content:'';
+    position:absolute; bottom:0; left:-4px;
+    width:9px; height:9px;
+    border-right:1px solid var(--gold-light);
+    border-bottom:1px solid var(--gold-light);
+    transform:rotate(45deg);
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ═══ FULL-WIDTH IMAGE ═══ */
+.full-image {
+    width:100%;
+    height:50vh;
+    min-height:350px;
+    object-fit:cover;
+    display:block;
+    filter: saturate(0.85);
+}
+
+/* ═══ TOC ═══ */
+.toc-section {
+    background:var(--cream);
+    border-top:1px solid var(--divider);
+    border-bottom:1px solid var(--divider);
+}
+.toc-container { max-width:720px; margin:0 auto; padding:4rem 2rem; }
+.toc-label {
+    font-family:'Montserrat',sans-serif;
+    font-weight:500; font-size:0.65rem;
+    letter-spacing:0.4em; text-transform:uppercase;
+    color:var(--gold); text-align:center;
+    margin-bottom:2.5rem;
+}
+.toc-list { list-style:none; counter-reset:toc; }
+.toc-list li { counter-increment:toc; border-bottom:1px solid var(--divider); }
+.toc-list li:last-child { border:none; }
+.toc-list a {
+    display:flex; align-items:baseline; gap:1.2rem;
+    padding:1rem 0; text-decoration:none;
+    color:var(--charcoal);
+    font-size:1.15rem; font-weight:500;
+    transition:all 0.3s;
+}
+.toc-list a:hover { color:var(--gold); padding-left:0.5rem; }
+.toc-list a::before {
+    content:counter(toc,decimal-leading-zero);
+    font-family:'Montserrat',sans-serif;
+    font-size:0.7rem; color:var(--rose);
+    min-width:1.8rem;
+}
+
+/* ═══ ARTICLE ═══ */
+.article-container { max-width:780px; margin:0 auto; padding:0 2rem; }
+.article-section { padding:5rem 0; border-bottom:1px solid var(--divider); }
+.article-section:last-of-type { border:none; }
+.section-number {
+    font-family:'Montserrat',sans-serif;
+    font-size:0.65rem; letter-spacing:0.4em;
+    text-transform:uppercase; color:var(--rose);
+    margin-bottom:1rem;
+}
+h2 {
+    font-family:'Playfair Display',serif;
+    font-weight:500;
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    line-height:1.25; margin-bottom:0.6rem;
+}
+h2 em { font-style:italic; color:var(--rose); }
+.section-tagline {
+    font-weight:300; font-style:italic;
+    font-size:1.15rem; color:var(--charcoal-soft);
+    margin-bottom:2.5rem;
+}
+h3 {
+    font-family:'Playfair Display',serif;
+    font-weight:500; font-size:1.4rem;
+    margin-top:3rem; margin-bottom:1rem;
+}
+h4 {
+    font-family:'Montserrat',sans-serif;
+    font-weight:600; font-size:0.75rem;
+    letter-spacing:0.25em; text-transform:uppercase;
+    color:var(--gold); margin-top:2.5rem; margin-bottom:1rem;
+}
+p {
+    font-size:1.08rem; line-height:1.85;
+    color:var(--charcoal-soft); margin-bottom:1.4rem;
+}
+strong { font-weight:600; color:var(--charcoal); }
+
+/* ═══ INLINE IMAGE ═══ */
+.inline-image {
+    width:100%;
+    border-radius:12px;
+    margin:2.5rem 0;
+    box-shadow:0 8px 30px rgba(45,42,46,0.1);
+}
+.image-caption {
+    text-align:center;
+    font-family:'Montserrat',sans-serif;
+    font-size:0.65rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--rose);
+    margin-top:-1.5rem;
+    margin-bottom:2.5rem;
+}
+
+/* ═══ VIDEO ═══ */
+.video-wrapper {
+    position:relative;
+    padding-bottom:56.25%;
+    height:0;
+    border-radius:12px;
+    overflow:hidden;
+    margin:3rem 0;
+    box-shadow:0 12px 40px rgba(45,42,46,0.15);
+}
+.video-wrapper iframe {
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    border:0;
+}
+.video-label {
+    text-align:center;
+    font-family:'Montserrat',sans-serif;
+    font-size:0.65rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:1rem;
+}
+
+/* ═══ CALLOUT ═══ */
+.callout {
+    background:linear-gradient(135deg,var(--rose-pale),var(--gold-pale));
+    border-left:3px solid var(--gold);
+    padding:2rem 2.5rem;
+    margin:2.5rem 0;
+    border-radius:0 8px 8px 0;
+}
+.callout p { margin:0; font-style:italic; color:var(--charcoal); }
+.callout-label {
+    font-family:'Montserrat',sans-serif;
+    font-weight:600; font-size:0.6rem;
+    letter-spacing:0.35em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:0.8rem; display:block;
+}
+
+/* ═══ PYRAMID CARD ═══ */
+.pyramid-card {
+    background:var(--cream);
+    border:1px solid var(--divider);
+    border-radius:12px;
+    padding:2.5rem;
+    margin:2rem 0;
+}
+.pyramid-card h4 { margin-top:0; }
+.note-list { list-style:none; }
+.note-list li {
+    position:relative; padding-left:1.6rem;
+    margin-bottom:0.9rem; font-size:1.05rem;
+    line-height:1.7; color:var(--charcoal-soft);
+}
+.note-list li::before {
+    content:'◆'; position:absolute; left:0;
+    color:var(--rose); font-size:0.5rem; top:0.55rem;
+}
+.note-list li strong { color:var(--charcoal); }
+
+/* ═══ TIMELINE ═══ */
+.timeline { position:relative; padding-left:2rem; margin:2rem 0; }
+.timeline::before {
+    content:''; position:absolute; left:0;
+    top:0; bottom:0; width:1px;
+    background:linear-gradient(to bottom,var(--rose),var(--gold-light));
+}
+.timeline-item { position:relative; margin-bottom:2rem; padding-left:1.5rem; }
+.timeline-item::before {
+    content:''; position:absolute; left:-2.35rem; top:0.6rem;
+    width:8px; height:8px; border-radius:50%;
+    background:var(--rose); border:2px solid var(--warm-white);
+}
+.timeline-time {
+    font-family:'Montserrat',sans-serif;
+    font-weight:600; font-size:0.7rem;
+    letter-spacing:0.15em; color:var(--gold);
+    margin-bottom:0.3rem;
+}
+.timeline-item p { margin:0; font-size:1rem; }
+
+/* ═══ STATS ═══ */
+.stats-row {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:1.5rem; margin:2.5rem 0;
+}
+.stat-card {
+    text-align:center; padding:2rem 1rem;
+    background:var(--cream);
+    border:1px solid var(--divider);
+    border-radius:12px;
+}
+.stat-value {
+    font-family:'Playfair Display',serif;
+    font-weight:600; font-size:1.8rem;
+    color:var(--rose); line-height:1.2;
+}
+.stat-label {
+    font-family:'Montserrat',sans-serif;
+    font-size:0.6rem; letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--charcoal-soft); margin-top:0.5rem;
+}
+
+/* ═══ PRO/CON ═══ */
+.pro-con-grid {
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:2rem; margin:2rem 0;
+}
+.pro-card,.con-card { padding:2rem; border-radius:12px; }
+.pro-card { background:linear-gradient(135deg,#F0E6D8,#FAF6F1); border:1px solid var(--gold-light); }
+.con-card { background:linear-gradient(135deg,var(--rose-pale),var(--cream)); border:1px solid var(--rose-light); }
+.pro-card h4,.con-card h4 { margin-top:0; }
+.pro-list,.con-list { list-style:none; }
+.pro-list li,.con-list li {
+    position:relative; padding-left:1.4rem;
+    margin-bottom:0.8rem; font-size:0.95rem;
+    line-height:1.7; color:var(--charcoal-soft);
+}
+.pro-list li::before { content:'♥'; position:absolute; left:0; color:var(--gold); font-size:0.7rem; top:0.35rem; }
+.con-list li::before { content:'—'; position:absolute; left:0; color:var(--rose); font-weight:600; }
+
+/* ═══ TABLES ═══ */
+.table-wrapper { overflow-x:auto; margin:2.5rem 0; border-radius:12px; border:1px solid var(--divider); }
+.comparison-table,.dosage-table { width:100%; border-collapse:collapse; font-size:0.95rem; }
+.comparison-table thead,.dosage-table thead { background:var(--cream); }
+.comparison-table th,.dosage-table th {
+    font-family:'Montserrat',sans-serif;
+    font-weight:600; font-size:0.6rem;
+    letter-spacing:0.25em; text-transform:uppercase;
+    color:var(--gold); padding:1.2rem 1rem;
+    text-align:left; border-bottom:1px solid var(--divider);
+    white-space:nowrap;
+}
+.comparison-table td,.dosage-table td {
+    padding:1rem; border-bottom:1px solid var(--divider);
+    color:var(--charcoal-soft);
+}
+.comparison-table tbody tr:last-child td,
+.dosage-table tbody tr:last-child td { border:none; }
+.comparison-table tbody tr:hover,
+.dosage-table tbody tr:hover { background:var(--rose-pale); }
+.comparison-table td:first-child {
+    font-family:'Playfair Display',serif;
+    font-weight:500; color:var(--charcoal); white-space:nowrap;
+}
+
+/* ═══ FLANKER CARDS ═══ */
+.flanker-grid { display:grid; gap:2rem; margin:2.5rem 0; }
+.flanker-card {
+    background:var(--cream);
+    border:1px solid var(--divider);
+    border-radius:12px; padding:2.5rem;
+    transition:transform 0.3s,box-shadow 0.3s;
+}
+.flanker-card:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(45,42,46,0.1); }
+.flanker-badge {
+    font-family:'Montserrat',sans-serif;
+    font-weight:600; font-size:0.6rem;
+    letter-spacing:0.3em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:0.8rem; display:block;
+}
+.flanker-name {
+    font-family:'Playfair Display',serif;
+    font-weight:600; font-size:1.35rem; margin-bottom:0.3rem;
+}
+.flanker-name em { font-style:italic; color:var(--rose); }
+.flanker-meta { display:flex; flex-wrap:wrap; gap:1rem; margin:1rem 0; }
+.flanker-tag {
+    font-family:'Montserrat',sans-serif;
+    font-size:0.6rem; font-weight:500;
+    letter-spacing:0.15em; text-transform:uppercase;
+    padding:0.3rem 0.8rem; border-radius:20px;
+    border:1px solid var(--divider); color:var(--charcoal-soft);
+}
+.flanker-card p { font-size:1rem; }
+
+/* ═══ NAVIGATOR ═══ */
+.navigator {
+    background:var(--cream);
+    border:1px solid var(--divider);
+    border-radius:12px; padding:2.5rem; margin:2.5rem 0;
+}
+.navigator h4 { margin-top:0; }
+.nav-item { display:flex; gap:0.8rem; margin-bottom:1rem; font-size:1rem; line-height:1.7; }
+.nav-query { font-style:italic; color:var(--charcoal); white-space:nowrap; }
+.nav-arrow { color:var(--gold); }
+.nav-answer { font-weight:500; color:var(--charcoal); }
+
+/* ═══ CHECKLIST ═══ */
+.checklist { list-style:none; margin:1.5rem 0; }
+.checklist li {
+    position:relative; padding-left:2rem;
+    margin-bottom:1rem; font-size:1rem;
+    line-height:1.7; color:var(--charcoal-soft);
+}
+.checklist li::before { content:'✓'; position:absolute; left:0; color:var(--gold); font-weight:700; }
+
+/* ═══ WHERE GRID ═══ */
+.where-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin:2rem 0; }
+.where-card { padding:2rem; border-radius:12px; border:1px solid var(--divider); }
+.where-safe { background:linear-gradient(135deg,#F0E6D8,#FAF6F1); border-color:var(--gold-light); }
+.where-risk { background:linear-gradient(135deg,var(--rose-pale),var(--cream)); border-color:var(--rose-light); }
+.where-card h4 { margin-top:0; }
+
+/* ═══ PULLQUOTE ═══ */
+.pullquote { text-align:center; padding:3rem 2rem; margin:3rem 0; position:relative; }
+.pullquote::before {
+    content:'"'; font-family:'Playfair Display',serif;
+    font-size:6rem; color:var(--rose-light);
+    position:absolute; top:0; left:50%;
+    transform:translateX(-50%); line-height:1;
+}
+.pullquote p {
+    font-family:'Playfair Display',serif;
+    font-weight:400; font-style:italic;
+    font-size:1.5rem; line-height:1.6;
+    color:var(--charcoal); max-width:600px;
+    margin:0 auto; position:relative; z-index:1;
+}
+
+/* ═══ PRICE BOX ═══ */
+.price-box {
+    background:linear-gradient(135deg,var(--charcoal),var(--charcoal-soft));
+    color:var(--warm-white); border-radius:12px;
+    padding:3rem; margin:3rem 0; text-align:center;
+}
+.price-box h4 { color:var(--gold-light); margin-top:0; margin-bottom:1.5rem; }
+.price-grid { display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.price-volume {
+    font-family:'Montserrat',sans-serif;
+    font-size:0.7rem; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--gold-light);
+}
+.price-value {
+    font-family:'Playfair Display',serif;
+    font-weight:600; font-size:1.6rem;
+}
+.price-note { font-size:0.9rem; color:rgba(253,251,249,0.6); margin:0; }
+
+/* ═══ ORNAMENT ═══ */
+.ornament { text-align:center; margin:3rem 0; color:var(--rose); font-size:1.4rem; letter-spacing:0.8em; opacity:0.5; }
+
+/* ═══ BACK TO TOP ═══ */
+.back-to-top {
+    display:inline-flex; align-items:center; gap:0.5rem;
+    font-family:'Montserrat',sans-serif;
+    font-size:0.6rem; letter-spacing:0.3em;
+    text-transform:uppercase; color:var(--gold);
+    text-decoration:none; margin-top:2rem;
+    transition:color 0.3s;
+}
+.back-to-top:hover { color:var(--charcoal); }
+
+/* ═══ FOOTER ═══ */
+.article-footer {
+    text-align:center; padding:4rem 2rem;
+    border-top:1px solid var(--divider);
+    background:var(--cream);
+}
+.footer-logo {
+    font-family:'Montserrat',sans-serif;
+    font-weight:500; font-size:0.65rem;
+    letter-spacing:0.4em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:1rem;
+}
+.footer-note { font-size:0.95rem; color:var(--charcoal-soft); font-style:italic; }
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:768px) {
+    html{font-size:16px}
+    .hero{min-height:85vh}
+    .article-section{padding:3.5rem 0}
+    .pro-con-grid,.where-grid{grid-template-columns:1fr}
+    .full-image{height:35vh;min-height:250px}
+}
+@media(max-width:480px) {
+    html{font-size:15px}
+    .hero{min-height:75vh}
+    .stats-row{grid-template-columns:1fr 1fr}
+    .price-grid{gap:1.5rem}
+    .nav-item{flex-direction:column;gap:0.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<header class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-brand">Lancôme Paris</div>
+        <h1 class="hero-title"><em>La Vie Est Belle</em></h1>
+        <p class="hero-sub">Полный гид по самому популярному аромату XXI&nbsp;века</p>
+        <div class="hero-line"></div>
+        <div class="hero-scroll">
+            <a href="#contents">Читать<span class="arrow"></span></a>
+        </div>
+    </div>
+</header>
+
+<!-- ═══════ TOC ═══════ -->
+<nav class="toc-section" id="contents">
+    <div class="toc-container">
+        <div class="toc-label">Оглавление</div>
+        <ol class="toc-list">
+            <li><a href="#history">История создания</a></li>
+            <li><a href="#video">Рекламное видео</a></li>
+            <li><a href="#pyramid">Пирамида и раскрытие</a></li>
+            <li><a href="#longevity">Стойкость и шлейф</a></li>
+            <li><a href="#how-to-wear">Кому, куда и когда</a></li>
+            <li><a href="#dosage">Дозировка</a></li>
+            <li><a href="#flankers">Гид по фланкерам</a></li>
+            <li><a href="#originals">Как распознать оригинал</a></li>
+            <li><a href="#alternatives">Альтернативы и аналоги</a></li>
+            <li><a href="#verdict">Итог</a></li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ═══════ MAIN ═══════ -->
+<main class="article-container">
+
+    <!-- 01 HISTORY -->
+    <section class="article-section" id="history">
+        <div class="section-number">01</div>
+        <h2>История создания: <em>кто подарил миру «Прекрасную жизнь»?</em></h2>
+        <div class="section-tagline">Манифест счастья, заключённый во флакон</div>
+
+        <p>В 2012 году Дом Lancôme сформулировал задачу, которая могла&nbsp;бы поставить в тупик кого угодно: создать <strong>«манифест счастья, заключённый во флакон»</strong>. Не невесомую цветочную дымку, не мимолётное настроение&nbsp;— а плотное, безошибочно узнаваемое высказывание.</p>
+
+        <img src="https://images.unsplash.com/photo-1594035910387-fea081ac69e5?auto=format&fit=crop&w=1200&q=80" alt="Парфюмерные флаконы" class="inline-image">
+        <div class="image-caption">Искусство создания аромата</div>
+
+        <h3>Три великих носа</h3>
+        <p><strong>Доминик Ропьон</strong>&nbsp;— автор Carnal Flower и Alien&nbsp;— отвечал за интенсивность и драматическую глубину. <strong>Анн Флипо</strong>, виртуоз гурманских аккордов, выстраивала сладкую архитектуру. <strong>Оливье Польж</strong>, в ту пору парфюмер Chanel, обеспечивал баланс и утончённость.</p>
+        <p>Из <strong>пяти тысяч итераций формулы</strong> команда отобрала единственную, где ирис и пачули создают бархатистую подложку для взрывной сладости пралине и <strong>этилмальтола</strong>&nbsp;— синтетической молекулы с ароматом карамелизованного сахара.</p>
+
+        <h3>«Хрустальная улыбка» 1949 года</h3>
+        <p>Силуэт флакона&nbsp;— реплика дизайна 1949 года, созданного художником-ювелиром <strong>Жоржем Делу</strong>. Изящно изогнутое стекло и невесомые крылья символизируют освобождение от условностей. В 2012 году добавилась серая шёлковая лента&nbsp;— отсылка к парижской haute couture.</p>
+
+        <div class="callout">
+            <span class="callout-label">Факт</span>
+            <p>Лицом кампании стала <strong>Джулия Робертс</strong>, чей контракт на 50&nbsp;млн долларов стал рекордом индустрии. Выбор продиктован её редким даром олицетворять «счастье без ретуши».</p>
+        </div>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 02 VIDEO -->
+    <section class="article-section" id="video">
+        <div class="section-number">02</div>
+        <h2>Рекламное видео: <em>La Vie Est Belle</em></h2>
+        <div class="section-tagline">Джулия Робертс в легендарном ролике Lancôme</div>
+
+        <div class="video-label">Официальная реклама · Lancôme</div>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/U3CPv6K1YqI?rel=0&modestbranding=1"
+                title="Lancôme La Vie Est Belle"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p>Рекламный ролик, снятый в Париже, стал одним из самых просматриваемых в истории парфюмерной индустрии. Джулия Робертс идёт по улицам города, оставляя за собой шлейф счастья&nbsp;— идеальная визуализация философии аромата.</p>
+
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80" alt="Элегантная женщина" class="inline-image">
+        <div class="image-caption">Счастье без ретуши — философия аромата</div>
+
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 03 PYRAMID -->
+    <section class="article-section" id="pyramid">
+        <div class="section-number">03</div>
+        <h2>Пирамида и раскрытие: <em>из чего соткана La Vie Est Belle?</em></h2>
+        <div class="section-tagline">Ирис, пачули и молекулярная сладость</div>
+
+        <p>Аромат выстроен по принципу <strong>«слоёного кружева»</strong>, где ноты не сменяют друг друга, а звучат одновременно, меняя лишь интенсивность.</p>
+
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?auto=format&fit=crop&w=1200&q=80" alt="Цветы ириса" class="inline-image">
+        <div class="image-caption">Ирис — сердце композиции</div>
+
+        <div class="pyramid-card">
+            <h4>Верхние ноты</h4>
+            <ul class="note-list">
+                <li><strong>Чёрная смородина</strong>&nbsp;— кисловатая, искристая, с леденцовой прозрачностью</li>
+                <li><strong>Груша</strong>&nbsp;— свежая, чуть водянистая, с металлическим блеском</li>
+            </ul>
+        </div>
+        <div class="pyramid-card">
+            <h4>Сердце</h4>
+            <ul class="note-list">
+                <li><strong>Ирис</strong>&nbsp;— пудровый, почти меловой, с аристократической сухостью</li>
+                <li><strong>Жасмин</strong>&nbsp;— индольный, с чувственными нюансами</li>
+                <li><strong>Апельсиновый цвет</strong>&nbsp;— чистый, мыльный, словно утренний свет</li>
+            </ul>
+        </div>
+        <div class="pyramid-card">
+            <h4>База</h4>
+            <ul class="note-list">
+                <li><strong>Пралине</strong>&nbsp;— ореховая карамель, тёплая и обволакивающая</li>
+                <li><strong>Ваниль</strong>&nbsp;— плотная, густая, далёкая от кремовости</li>
+                <li><strong>Пачули</strong>&nbsp;— древесно-землистые, благородные</li>
+                <li><strong>Бобы тонка</strong>&nbsp;— миндально-сенный аккорд</li>
+            </ul>
+        </div>
+
+        <div class="callout">
+            <span class="callout-label">Важная деталь</span>
+            <p>Ирис здесь&nbsp;— не цветок, а <strong>корень</strong>. Масло получают из корневища после трёхлетней выдержки. <strong>Этилмальтол</strong> в концентрации ~2% (при норме 0,5–1%) усиливает сладость в 4–6 раз.</p>
+        </div>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 04 LONGEVITY -->
+    <section class="article-section" id="longevity">
+        <div class="section-number">04</div>
+        <h2>Стойкость и шлейф: <em>одного прикосновения достаточно</em></h2>
+        <div class="section-tagline">Аромат, который не умеет быть тихим</div>
+
+        <div class="stats-row">
+            <div class="stat-card"><div class="stat-value">10–12 ч</div><div class="stat-label">На коже</div></div>
+            <div class="stat-card"><div class="stat-value">до 3 сут</div><div class="stat-label">На одежде</div></div>
+            <div class="stat-card"><div class="stat-value">1,5–2 м</div><div class="stat-label">Радиус шлейфа</div></div>
+        </div>
+
+        <p>Концентрация EDP — <strong>15–18%</strong> ароматических масел (для сравнения, EDT — 8–12%).</p>
+
+        <h3>Как раскрывается на коже</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">0–15 минут</div>
+                <p>Взрыв сладости — фаза, которую критики называют <em>«сахарной ватой на ветру»</em>.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">15–60 минут</div>
+                <p>Ирис выходит на первый план, сглаживая приторность благородной сухостью.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">2–6 часов</div>
+                <p>Пачули и пралине сплетаются в древесно-гурманский аккорд — истинное лицо аромата.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">6+ часов</div>
+                <p>Пудрово-ванильный след — тихий, но настойчивый, как эхо праздника.</p>
+            </div>
+        </div>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 05 HOW TO WEAR -->
+    <section class="article-section" id="how-to-wear">
+        <div class="section-number">05</div>
+        <h2>Кому, куда и когда: <em>искусство носить дерзкую сладость</em></h2>
+        <div class="section-tagline">Аромат-максималист, не созданный для незаметности</div>
+
+        <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=1200&q=80" alt="Розы" class="inline-image">
+        <div class="image-caption">Оптимальный сезон — октябрь по апрель</div>
+
+        <div class="stats-row">
+            <div class="stat-card"><div class="stat-value">40%</div><div class="stat-label">25–35 лет</div></div>
+            <div class="stat-card"><div class="stat-value">35%</div><div class="stat-label">35–50 лет</div></div>
+            <div class="stat-card"><div class="stat-value">15%</div><div class="stat-label">18–25 лет</div></div>
+            <div class="stat-card"><div class="stat-value">10%</div><div class="stat-label">50+ лет</div></div>
+        </div>
+
+        <p><strong>Оптимальные условия:</strong> +5…+15&nbsp;°C, низкая влажность, октябрь–апрель. В жару сладость усиливается в 2–3 раза.</p>
+
+        <div class="pro-con-grid">
+            <div class="pro-card">
+                <h4>Где уместен ✓</h4>
+                <ul class="pro-list">
+                    <li>Рестораны, театры, торжества</li>
+                    <li>Офис — один пшик</li>
+                    <li>Прогулки в прохладную погоду</li>
+                    <li>Праздники и особые случаи</li>
+                </ul>
+            </div>
+            <div class="con-card">
+                <h4>Где избыточен ✗</h4>
+                <ul class="con-list">
+                    <li>Спортзал, баня, SPA</li>
+                    <li>Перелёты, замкнутые пространства</li>
+                    <li>Медицинские учреждения</li>
+                    <li>Переговорные</li>
+                </ul>
+            </div>
+        </div>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 06 DOSAGE -->
+    <section class="article-section" id="dosage">
+        <div class="section-number">06</div>
+        <h2>Дозировка: <em>тонкое искусство баланса</em></h2>
+        <div class="section-tagline">Разница между комплиментом и дискомфортом — одно нажатие</div>
+
+        <table class="dosage-table">
+            <thead><tr><th>Ситуация</th><th>Кол-во</th><th>Зоны</th></tr></thead>
+            <tbody>
+                <tr><td>Офис</td><td>1 пшик</td><td>Внутренняя сторона запястья</td></tr>
+                <tr><td>Вечерний выход</td><td>2 пшика</td><td>Запястья или за ушами</td></tr>
+                <tr><td>Свидание</td><td>2–3 пшика</td><td>Запястья + ключицы</td></tr>
+                <tr><td>На одежду</td><td>1 пшик (30 см)</td><td>Подкладка, шарф</td></tr>
+            </tbody>
+        </table>
+
+        <div class="callout">
+            <span class="callout-label">Хитрость для офиса</span>
+            <p>Нанесите один пшик на расчёску и проведите по волосам — деликатный шлейф, который вызывает вопросы «чем ты так пахнешь?», а не желание открыть окно.</p>
+        </div>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 07 FLANKERS -->
+    <section class="article-section" id="flankers">
+        <div class="section-number">07</div>
+        <h2>Семья La Vie Est Belle: <em>гид по фланкерам</em></h2>
+        <div class="section-tagline">Пять граней одного счастья</div>
+
+        <div class="flanker-grid">
+            <div class="flanker-card">
+                <span class="flanker-badge">Оригинал · 2012</span>
+                <div class="flanker-name">La Vie Est Belle <em>EDP</em></div>
+                <div class="flanker-meta"><span class="flanker-tag">Ирис · Пачули · Ваниль</span><span class="flanker-tag">10–12 ч</span></div>
+                <p>Классическая гурманская сладость с пудровой подложкой. Абсолютный эталон линейки.</p>
+            </div>
+            <div class="flanker-card">
+                <span class="flanker-badge">Цветочный</span>
+                <div class="flanker-name">Rose <em>Extraordinaire</em></div>
+                <div class="flanker-meta"><span class="flanker-tag">Роза · Ирис · Мускус</span><span class="flanker-tag">8–10 ч</span></div>
+                <p>Легче, воздушнее, женственнее. Идеален для весны и лета.</p>
+            </div>
+            <div class="flanker-card">
+                <span class="flanker-badge">Десертный</span>
+                <div class="flanker-name"><em>L'Elixir</em></div>
+                <div class="flanker-meta"><span class="flanker-tag">Малина · Фиалка · Какао</span><span class="flanker-tag">10–12 ч</span></div>
+                <p>Фруктово-шоколадная феерия — самый «десертный» фланкер. Для холодных месяцев.</p>
+            </div>
+            <div class="flanker-card">
+                <span class="flanker-badge">Уютный</span>
+                <div class="flanker-name">Vanille <em>Nude</em></div>
+                <div class="flanker-meta"><span class="flanker-tag">Жасмин · Ваниль · Мускус</span><span class="flanker-tag">9–11 ч</span></div>
+                <p>Кашемировый плед зимним вечером. Мягче, интимнее, без взрывной яркости.</p>
+            </div>
+            <div class="flanker-card">
+                <span class="flanker-badge">Восточный</span>
+                <div class="flanker-name"><em>Cherry</em></div>
+                <div class="flanker-meta"><span class="flanker-tag">Вишня · Уд · Фиолетовый лист</span><span class="flanker-tag">11–13 ч</span></div>
+                <p>Самая сложная версия. Вишня + уд = LVEB, который повзрослел.</p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="comparison-table">
+                <thead><tr><th>Версия</th><th>Настроение</th><th>Сладость</th><th>Сезон</th><th>Возраст</th></tr></thead>
+                <tbody>
+                    <tr><td>Флагман EDP</td><td>Уверенность</td><td>9/10</td><td>Осень–весна</td><td>25–50</td></tr>
+                    <tr><td>Rose Extraordinaire</td><td>Свежесть</td><td>6/10</td><td>Весна–лето</td><td>25–40</td></tr>
+                    <tr><td>L'Elixir</td><td>Искушение</td><td>10/10</td><td>Осень–зима</td><td>20–35</td></tr>
+                    <tr><td>Vanille Nude</td><td>Уют</td><td>8/10</td><td>Круглый год</td><td>30–50</td></tr>
+                    <tr><td>Cherry</td><td>Дерзость</td><td>7/10</td><td>Осень–зима</td><td>30–55</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="navigator">
+            <h4>Навигатор</h4>
+            <div class="nav-item"><span class="nav-query">«Классику, но легче»</span><span class="nav-arrow">→</span><span class="nav-answer">Rose Extraordinaire</span></div>
+            <div class="nav-item"><span class="nav-query">«Ещё слаще»</span><span class="nav-arrow">→</span><span class="nav-answer">L'Elixir</span></div>
+            <div class="nav-item"><span class="nav-query">«Мягкую ваниль»</span><span class="nav-arrow">→</span><span class="nav-answer">Vanille Nude</span></div>
+            <div class="nav-item"><span class="nav-query">«Необычное»</span><span class="nav-arrow">→</span><span class="nav-answer">Cherry</span></div>
+        </div>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 08 ORIGINALS -->
+    <section class="article-section" id="originals">
+        <div class="section-number">08</div>
+        <h2>Осторожно, подделки! <em>Как распознать оригинал</em></h2>
+        <div class="section-tagline">До 30% предложений на вторичных площадках — имитации</div>
+
+        <h4>Упаковка и коробка</h4>
+        <ul class="checklist">
+            <li>Целлофан плотно облегает, без складок и «пузырей»</li>
+            <li>Штрихкод чёткий, швы ровные, без потёков клея</li>
+            <li>Картон плотный, матовый; шрифт безупречный</li>
+            <li>Батч-код на коробке = код на дне флакона</li>
+        </ul>
+
+        <h4>Флакон и пульверизатор</h4>
+        <ul class="checklist">
+            <li>Стекло увесистое, без пузырьков; логотип выгравирован</li>
+            <li>Лента пришита, а не приклеена; трубочка невидима</li>
+            <li>Распыляет облако, а не струю; юбка без зазоров</li>
+        </ul>
+
+        <h4>Батч-код</h4>
+        <p>Проверьте на <strong>CheckFresh.com</strong>. Формат: <strong>40NXXX</strong>. Пример: 48K045 = декабрь 2022.</p>
+
+        <div class="where-grid">
+            <div class="where-card where-safe">
+                <h4>Безопасно ✓</h4>
+                <ul class="pro-list">
+                    <li>lancome.ru</li>
+                    <li>Л'Этуаль, Рив Гош, Иль де Ботэ</li>
+                    <li>Дьюти-фри</li>
+                    <li>Маркетплейсы (рейтинг 4,8+)</li>
+                </ul>
+            </div>
+            <div class="where-card where-risk">
+                <h4>Опасно ✗</h4>
+                <ul class="con-list">
+                    <li>Avito, «ВКонтакте» (до 90% подделок)</li>
+                    <li>Цены на 40%+ ниже рынка</li>
+                    <li>«Оригиналы из ОАЭ»</li>
+                </ul>
+            </div>
+        </div>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 09 ALTERNATIVES -->
+    <section class="article-section" id="alternatives">
+        <div class="section-number">09</div>
+        <h2>На что это похоже: <em>альтернативы и аналоги</em></h2>
+        <div class="section-tagline">Маршруты для ольфакторного путешествия</div>
+
+        <h3>Премиум</h3>
+        <ul class="note-list">
+            <li><strong>YSL Mon Paris</strong> — слаще, с клубникой. ~7 000 ₽ / 50 мл</li>
+            <li><strong>Viktor&Rolf Bonbon</strong> — карамель + персик. ~8 000 ₽ / 50 мл</li>
+            <li><strong>Paco Rabanne Olympéa</strong> — солёная ваниль, свежее. ~6 000 ₽ / 50 мл</li>
+        </ul>
+        <h3>Бюджетные</h3>
+        <ul class="note-list">
+            <li><strong>Zara Orchid</strong> — пудрово-сладкая. ~2 000 ₽ / 90 мл</li>
+            <li><strong>Ariana Grande Cloud</strong> — ванильно-пралиновая. ~3 500 ₽ / 100 мл</li>
+        </ul>
+        <h3>Нишевые</h3>
+        <ul class="note-list">
+            <li><strong>MFK À La Rose</strong> — ирис и роза, изысканнее. ~18 000 ₽ / 70 мл</li>
+            <li><strong>Juliette Has a Gun Vanilla Vibes</strong> — ваниль + сандал. ~12 000 ₽ / 50 мл</li>
+        </ul>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+    <!-- 10 VERDICT -->
+    <section class="article-section" id="verdict">
+        <div class="section-number">10</div>
+        <h2>Итог: <em>почему этот аромат вечен</em></h2>
+        <div class="section-tagline">Один флакон каждые десять секунд</div>
+
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=80" alt="Красота и элегантность" class="inline-image">
+        <div class="image-caption">Право на громкость. Право на присутствие.</div>
+
+        <div class="pro-con-grid">
+            <div class="pro-card">
+                <h4>Почему обожают ♥</h4>
+                <ul class="pro-list">
+                    <li>Узнаваемость с первой секунды</li>
+                    <li>Экстремальная стойкость</li>
+                    <li>Универсальность</li>
+                    <li>Эмоция праздника и силы</li>
+                </ul>
+            </div>
+            <div class="con-card">
+                <h4>Почему не принимают</h4>
+                <ul class="con-list">
+                    <li>Повсеместность</li>
+                    <li>Мощь → навязчивость</li>
+                    <li>Массовость убивает исключительность</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pullquote">
+            <p>Я здесь. Я яркая. Я не прошу разрешения быть замеченной.</p>
+        </div>
+
+        <p>В мире, где парфюмерия прячется за skin scent, LVEB остаётся <strong>манифестом права на громкость</strong>. Покупайте, если готовы к вниманию. Тестируйте на коже не менее четырёх часов — блоттер не раскроет его магию.</p>
+
+        <div class="price-box">
+            <h4>Цена оригинала · 2026</h4>
+            <div class="price-grid">
+                <div class="price-item"><div class="price-volume">30 мл</div><div class="price-value">от 10 600 ₽</div></div>
+                <div class="price-item"><div class="price-volume">50 мл</div><div class="price-value">от 12 600 ₽</div></div>
+                <div class="price-item"><div class="price-volume">100 мл</div><div class="price-value">от 16 000 ₽</div></div>
+            </div>
+            <p class="price-note">Срок годности — 36 месяцев. Хранить при +15…+20 °C.</p>
+        </div>
+        <a href="#contents" class="back-to-top">↑ К оглавлению</a>
+    </section>
+
+</main>
+
+<footer class="article-footer">
+    <div class="footer-logo">Lancôme · Paris</div>
+    <p class="footer-note">La vie est belle — жизнь прекрасна</p>
+</footer>
+
+</body>
+</html>
